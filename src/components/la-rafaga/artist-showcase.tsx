@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card'; // Se elimina CardFooter de la importación
 
 const artists = [
   { name: 'Celia Cruz', src: 'https://placehold.co/400x400.png', hint: 'female singer' },
@@ -23,13 +23,12 @@ export function ArtistShowcase() {
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
                 data-ai-hint={artist.hint}
               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardContent>
-            <CardFooter className="p-3 absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent">
-              <h3 className="text-sm font-bold text-center w-full truncate text-white">{artist.name}</h3>
-            </CardFooter>
+            {/* --- SE ELIMINA EL SIGUIENTE BLOQUE <CardFooter> --- */}
           </Card>
-        ))}
+        ))
+        }
       </div>
     </section>
   );
