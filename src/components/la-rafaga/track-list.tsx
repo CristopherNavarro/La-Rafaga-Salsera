@@ -21,14 +21,14 @@ const tracks = [
 export function TrackList() {
   return (
     <section className="w-full">
-      <h2 className="text-4xl font-headline tracking-wider text-center mb-8 text-accent">Downloadable Mixes</h2>
+      <h2 className="text-4xl font-headline tracking-wider text-center mb-8 text-accent">Mezclas para Descargar</h2>
       <Card>
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="font-headline tracking-wide text-base">Track</TableHead>
-              <TableHead className="font-headline tracking-wide text-base">Artist</TableHead>
-              <TableHead className="text-right font-headline tracking-wide text-base">Download</TableHead>
+              <TableHead className="font-headline tracking-wide text-base">Canción</TableHead>
+              <TableHead className="font-headline tracking-wide text-base">Artista</TableHead>
+              <TableHead className="text-right font-headline tracking-wide text-base">Descargar</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -39,7 +39,7 @@ export function TrackList() {
                 <TableCell className="text-right">
                   <Button variant="ghost" size="icon">
                     <Download className="h-5 w-5 text-accent" />
-                    <span className="sr-only">Download</span>
+                    <span className="sr-only">Descargar</span>
                   </Button>
                 </TableCell>
               </TableRow>

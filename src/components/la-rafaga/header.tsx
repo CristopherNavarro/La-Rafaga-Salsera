@@ -7,7 +7,7 @@ export function Header() {
       <div className="flex items-center gap-4">
         <Music className="text-primary h-8 w-8" />
         <h1 className="text-3xl md:text-4xl font-headline tracking-wider text-foreground">
-          La Rafaga Salsera
+          La Ráfaga Salsera
         </h1>
       </div>
       <nav className="flex items-center gap-2">

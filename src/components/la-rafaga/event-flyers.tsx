@@ -10,7 +10,7 @@ const flyers = [
 export function EventFlyers() {
   return (
     <section className="w-full">
-      <h2 className="text-4xl font-headline tracking-wider text-left mb-8 text-accent">Weekly Events</h2>
+      <h2 className="text-4xl font-headline tracking-wider text-left mb-8 text-accent">Eventos de la Semana</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {flyers.map((flyer, index) => (
           <Card key={index} className="overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
