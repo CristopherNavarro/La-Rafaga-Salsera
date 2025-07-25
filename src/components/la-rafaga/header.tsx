@@ -55,13 +55,13 @@ export const Header = () => {
 
         {/* Sección Derecha: Iconos Sociales */}
         <div className="flex items-center space-x-4 sm:space-x-5 flex-shrink-0">
-          <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">
+          <Link href="https://www.instagram.com/larafagasalsera" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">
             <Instagram size={22} />
           </Link>
-          <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">
+          <Link href="https://www.youtube.com/@larafagasalsera4655" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">
             <Youtube size={22} />
           </Link>
-          <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">
+          <Link href="https://www.facebook.com/profile.php?id=100016959364788" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">
             <Facebook size={22} />
           </Link>
         </div>

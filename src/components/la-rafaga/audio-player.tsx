@@ -17,11 +17,11 @@ export function AudioPlayer() {
       <CardContent className="p-4 md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
           <Image
-            src="https://placehold.co/150x150.png"
+            src="/logo.png"
             alt="Album art"
-            width={100}
-            height={100}
-            className="rounded-lg shadow-md aspect-square object-cover"
+            width={150}
+            height={150}
+            className="aspect-square object-cover"
           />
           <div className="flex-grow w-full text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-2">

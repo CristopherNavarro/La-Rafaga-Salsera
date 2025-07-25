@@ -10,7 +10,7 @@ export function ChatBox() {
       </CardHeader>
       <CardContent>
         <div className="h-96 border-2 border-dashed border-border rounded-lg flex items-center justify-center bg-background/30">
-          <p className="text-muted-foreground text-center p-4">El widget del chat de terceros se puede incrustar aquí.</p>
+          <p className="text-muted-foreground text-center p-4">Widget Chat</p>
         </div>
       </CardContent>
     </Card>
