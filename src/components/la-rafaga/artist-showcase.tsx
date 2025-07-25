@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card'; // Se elimina CardFooter de la importación
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
+// Leyendas de la salsa para los ejemplos
 const artists = [
-  { name: 'Celia Cruz', src: 'https://placehold.co/400x400.png', hint: 'female singer' },
-  { name: 'Héctor Lavoe', src: 'https://placehold.co/400x400.png', hint: 'male singer' },
-  { name: 'Marc Anthony', src: 'https://placehold.co/400x400.png', hint: 'male musician' },
-  { name: 'Willie Colón', src: 'https://placehold.co/400x400.png', hint: 'trombone player' },
+  { name: 'Celia Cruz', src: 'https://placehold.co/400x400.png', hint: 'La Guarachera de Cuba' },
+  { name: 'Héctor Lavoe', src: 'https://placehold.co/400x400.png', hint: 'El Cantante de los Cantantes' },
+  { name: 'Willie Colón', src: 'https://placehold.co/400x400.png', hint: 'El Malo del Trombón' },
+  { name: 'Johnny Pacheco', src: 'https://placehold.co/400x400.png', hint: 'Fundador de Fania' },
 ];
 
 export function ArtistShowcase() {
@@ -14,21 +15,21 @@ export function ArtistShowcase() {
       <h2 className="text-4xl font-headline tracking-wider text-center mb-8 text-accent">Artistas Destacados</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {artists.map((artist, index) => (
-          <Card key={index} className="group overflow-hidden border-border/50 transition-all hover:shadow-lg hover:border-accent/50">
+          <Card key={index} className="group overflow-hidden border-border/50 transition-all hover:shadow-lg hover:border-accent/50 bg-card">
             <CardContent className="p-0 relative aspect-square">
               <Image
                 src={artist.src}
-                alt={`Photo of ${artist.name}`}
+                alt={`Foto de ${artist.name}`}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
-                data-ai-hint={artist.hint}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </CardContent>
-            {/* --- SE ELIMINA EL SIGUIENTE BLOQUE <CardFooter> --- */}
+            {/* Pie de foto con el nombre del artista */}
+            <CardFooter className="p-3 bg-black/20">
+              <h3 className="text-base font-bold text-center w-full truncate text-foreground">{artist.name}</h3>
+            </CardFooter>
           </Card>
-        ))
-        }
+        ))}
       </div>
     </section>
   );

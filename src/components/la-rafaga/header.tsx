@@ -1,32 +1,65 @@
-import { Music, Facebook, Instagram, Youtube } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+"use client";
 
-export function Header() {
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+
+interface HeaderProps {
+  className?: string;
+}
+
+const Header = ({ className }: HeaderProps) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down and scrolled past 100px
+        setIsVisible(false);
+      } else {
+        // Scrolling up or at the top
+        setIsVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+
+      // Clean up the event listener
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
-    <header className="py-6 px-4 md:px-8 flex items-center justify-between border-b border-border sticky top-0 bg-background/80 backdrop-blur-sm z-20">
-      <div className="flex items-center gap-4">
-        <Music className="text-primary h-8 w-8" />
-        <h1 className="text-3xl md:text-4xl font-headline tracking-wider text-foreground">
-          La Ráfaga Salsera
-        </h1>
-      </div>
-      <nav className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" asChild>
-          <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-accent">
-            <Facebook className="h-5 w-5" />
-          </a>
-        </Button>
-        <Button variant="ghost" size="icon" asChild>
-          <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-accent">
-            <Instagram className="h-5 w-5" />
-          </a>
-        </Button>
-        <Button variant="ghost" size="icon" asChild>
-          <a href="#" aria-label="Youtube" className="text-muted-foreground hover:text-accent">
-            <Youtube className="h-5 w-5" />
-          </a>
-        </Button>
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out',
+        isVisible ? 'translate-y-0' : '-translate-y-full',
+        className
+      )}
+    >
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center">
+          {/* Reemplazar con tu logo */}
+          <Image src="/logo.png" alt="La Ráfaga" width={50} height={50} />
+          <span className="ml-3 text-xl font-bold text-foreground hidden md:block">La Ráfaga</span>
+        </Link>
+
+        {/* Aquí podrías añadir elementos de navegación si fueran necesarios */}
+        {/* <div className="flex items-center space-x-4">
+          <Link href="/about" className="text-foreground hover:text-primary transition-colors">Sobre Nosotros</Link>
+          <Link href="/contact" className="text-foreground hover:text-primary transition-colors">Contacto</Link>
+        </div> */}
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

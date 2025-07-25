@@ -1,44 +1,29 @@
 import { Music } from 'lucide-react';
 
 const artists = [
-  'Marc Anthony',
-  'Jerry Rivera',
-  'Frankie Ruiz',
-  'El Gran Combo de Puerto Rico',
-  'Willie Colón',
-  'Héctor Lavoe',
-  'Fania All-Stars',
   'Celia Cruz',
+  'Héctor Lavoe',
+  'Willie Colón',
   'Rubén Blades',
-  'Tito Puente',
-  'Eddie Palmieri',
-  'Ray Barretto',
-  'Cheo Feliciano',
+  'El Gran Combo de Puerto Rico',
+  'Fania All-Stars',
+  'Johnny Pacheco',
   'Ismael Rivera',
-  'Andy Montañez',
-  'La Sonora Ponceña',
-  'Victor Manuelle',
-  'Gilberto Santa Rosa',
-  'Rey Ruiz',
-  'DLG (Dark Latin Groove)',
 ];
+
+// Duplicamos la lista para crear el efecto de loop sin cortes
+const marqueeContent = [...artists, ...artists];
 
 export function ArtistMarquee() {
   return (
-    <div className="relative hidden md:flex overflow-x-hidden bg-black bg-opacity-50 py-3 border-y-2 border-yellow-500">
-      <div className="animate-marquee flex whitespace-nowrap">
-        {artists.map((artist, index) => (
-          <span key={index} className="text-xl md:text-2xl lg:text-3xl font-bold mx-8 flex items-center text-white">
-            <Music className="h-6 w-6 mr-2 text-yellow-500" /> {artist}
-          </span>
-        ))}
-      </div>
-      {/* Duplicar el contenido para un efecto de loop continuo */}
-      <div className="animate-marquee-2 flex whitespace-nowrap absolute top-0 left-full">
-         {artists.map((artist, index) => (
-          <span key={index} className="text-xl md:text-2xl lg:text-3xl font-bold mx-8 flex items-center text-white">
-            <Music className="h-6 w-6 mr-2 text-yellow-500" /> {artist}
-          </span>
+    // Se oculta en móvil (hidden) y se muestra en pantallas medianas o más grandes (md:flex)
+    <div className="relative hidden md:flex w-full overflow-x-hidden bg-black/70 backdrop-blur-sm border-y-2 border-accent text-white py-4">
+      <div className="flex whitespace-nowrap animate-[marquee_40s_linear_infinite]">
+        {marqueeContent.map((artist, index) => (
+          <div key={`marquee-item-${index}`} className="flex items-center mx-8">
+            <span className="text-xl font-bold tracking-wider">{artist}</span>
+            <Music className="h-5 w-5 text-accent ml-8" />
+          </div>
         ))}
       </div>
     </div>
