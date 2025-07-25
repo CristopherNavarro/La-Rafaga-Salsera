@@ -67,9 +67,13 @@ export default {
         },
       },
       borderRadius: {
+        // Aumentar el valor de --radius en globals.css para más redondez general
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+         'xl': '1rem', // Nuevo tamaño XL
+         '2xl': '1.5rem', // Nuevo tamaño 2XL
+         '3xl': '2rem', // Nuevo tamaño 3XL
       },
       keyframes: {
         'accordion-down': {
