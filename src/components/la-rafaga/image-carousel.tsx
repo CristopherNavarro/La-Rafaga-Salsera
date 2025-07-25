@@ -12,9 +12,10 @@ import {
 } from '@/components/ui/carousel';
 
 const images = [
-  { src: 'https://placehold.co/1600x800.png', alt: 'Salsa dancers in motion' },
-  { src: 'https://placehold.co/1600x800.png', alt: 'DJ mixing on a turntable' },
-  { src: 'https://placehold.co/1600x800.png', alt: 'A lively party with a crowd dancing' },
+  { src: '/image1.png', alt: 'Evento de salsa con La Ráfaga' },
+  { src: '/image2.png', alt: 'Público disfrutando en un concierto de salsa' },
+  { src: '/image3.png', alt: 'DJ La Ráfaga mezclando en vivo' },
+  { src: '/image4.png', alt: 'Detalle de vinilos de salsa' },
 ];
 
 export function ImageCarousel() {
@@ -22,7 +23,7 @@ export function ImageCarousel() {
     <Carousel 
       className="w-full h-full" 
       opts={{ loop: true }}
-      plugins={[Autoplay({ delay: 5000 })]}
+      plugins={[Autoplay({ delay: 5000, stopOnInteraction: false })]}
     >
       <CarouselContent className="h-full">
         {images.map((image, index) => (
@@ -32,16 +33,19 @@ export function ImageCarousel() {
                 src={image.src}
                 alt={image.alt}
                 fill
+                // MEJORA: Prioriza la carga de la primera imagen para un mejor rendimiento
                 priority={index === 0}
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              {/* Este degradado ayuda a que el texto (si lo hubiera) sea más legible */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 hidden md:flex text-white hover:bg-white/20 hover:text-white" />
-      <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:flex text-white hover:bg-white/20 hover:text-white" />
+      <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/30 hover:bg-white/20 border-none hover:text-white" />
+      <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/30 hover:bg-white/20 border-none hover:text-white" />
     </Carousel>
   );
 }

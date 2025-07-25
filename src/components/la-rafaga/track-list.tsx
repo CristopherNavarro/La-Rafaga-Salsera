@@ -21,7 +21,7 @@ const tracks = [
 export function TrackList() {
   return (
     <section className="w-full">
-      <h2 className="text-4xl font-headline tracking-wider text-center mb-8 text-accent">Mezclas para Descargar</h2>
+      <h2 className="text-4xl font-headline font-bold tracking-wider text-center mb-8 text-accent">Mezclas para Descargar</h2>
       <Card>
         <Table>
           <TableHeader>

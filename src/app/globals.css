@@ -37,7 +37,7 @@
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
+    --muted: 0 0% 60%;
     --muted-foreground: 0 0% 60%;
     --accent: 51 100% 50%;
     --accent-foreground: 0 0% 10%;
@@ -68,5 +68,11 @@
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+}
+
+@layer components {
+  .embla {
+    height: 100%;
   }
 }

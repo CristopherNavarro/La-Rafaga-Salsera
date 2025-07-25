@@ -12,7 +12,7 @@ const artists = [
 export function ArtistShowcase() {
   return (
     <section className="w-full">
-      <h2 className="text-4xl font-headline tracking-wider text-center mb-8 text-accent">Artistas Destacados</h2>
+      <h2 className="text-4xl font-headline font-bold tracking-wider text-center mb-8 text-accent">Artistas Destacados</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {artists.map((artist, index) => (
           <Card key={index} className="group overflow-hidden border-border/50 transition-all hover:shadow-lg hover:border-accent/50 bg-card">

@@ -6,17 +6,18 @@ import { Button } from '@/components/ui/button';
 import { Play, Pause, Rewind, FastForward, Radio } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
+// ¡Ya no tiene el div con "position: fixed"!
+// Ahora es solo el componente Card.
 export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(33);
 
   return (
-    <Card className="w-full max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-accent/20 shadow-xl">
+    <Card className="w-full bg-card/50 backdrop-blur-sm border-accent/20 shadow-xl">
       <CardContent className="p-4 md:p-6">
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
           <Image
             src="https://placehold.co/150x150.png"
-            data-ai-hint="salsa album"
             alt="Album art"
             width={100}
             height={100}
@@ -31,13 +32,13 @@ export function AudioPlayer() {
             <p className="text-muted-foreground">Live from the studio</p>
           </div>
           <div className="flex items-center gap-2 md:gap-4 mt-4 md:mt-0">
-            <Button variant="ghost" size="icon" className="text-accent hover:text-accent-foreground hover:bg-accent/20 transition-colors">
+            <Button variant="ghost" size="icon" className="text-accent hover:text-accent-foreground hover:bg-accent/20">
               <Rewind className="w-6 h-6" />
             </Button>
-            <Button variant="default" size="icon" className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg transform hover:scale-105 transition-transform" onClick={() => setIsPlaying(!isPlaying)}>
+            <Button variant="default" size="icon" className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg" onClick={() => setIsPlaying(!isPlaying)}>
               {isPlaying ? <Pause className="w-8 h-8 fill-primary-foreground" /> : <Play className="w-8 h-8 fill-primary-foreground" />}
             </Button>
-            <Button variant="ghost" size="icon" className="text-accent hover:text-accent-foreground hover:bg-accent/20 transition-colors">
+            <Button variant="ghost" size="icon" className="text-accent hover:text-accent-foreground hover:bg-accent/20">
               <FastForward className="w-6 h-6" />
             </Button>
           </div>
