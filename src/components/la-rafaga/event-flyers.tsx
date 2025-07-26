@@ -2,9 +2,9 @@ import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 
 const flyers = [
-  { src: 'https://placehold.co/600x800.png', alt: 'Salsa Night event flyer', hint: 'event flyer' },
-  { src: 'https://placehold.co/600x800.png', alt: 'Latin Fiesta event flyer', hint: 'concert poster' },
-  { src: 'https://placehold.co/600x800.png', alt: 'Weekend Salsa Social flyer', hint: 'event flyer' },
+  { src: '/imageflyer1.jpeg', alt: 'Salsa Night event flyer', hint: 'event flyer' },
+  { src: '/imageflyer2.jpeg', alt: 'Latin Fiesta event flyer', hint: 'concert poster' },
+  { src: '/imageflyer3.jpeg', alt: 'Weekend Salsa Social flyer', hint: 'event flyer' },
 ];
 
 export function EventFlyers() {
@@ -25,7 +25,8 @@ export function EventFlyers() {
               />
             </CardContent>
           </Card>
-        ))}
+        ))
+        }
       </div>
     </section>
   );

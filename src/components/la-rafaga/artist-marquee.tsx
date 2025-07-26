@@ -6,9 +6,12 @@ const artists = [
   'Willie Colón',
   'Rubén Blades',
   'El Gran Combo de Puerto Rico',
-  'Fania All-Stars',
+  "Oscar D'León",
   'Johnny Pacheco',
   'Ismael Rivera',
+  'Joe Arroyo',
+  'Pete "El Conde" Rodríguez',
+  'Johnny Pacheco',
 ];
 
 // Duplicamos la lista para crear el efecto de loop sin cortes

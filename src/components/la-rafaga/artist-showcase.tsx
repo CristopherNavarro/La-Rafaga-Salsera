@@ -3,10 +3,10 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
 // Leyendas de la salsa para los ejemplos
 const artists = [
-  { name: 'Celia Cruz', src: 'https://placehold.co/400x400.png', hint: 'La Guarachera de Cuba' },
-  { name: 'Héctor Lavoe', src: 'https://placehold.co/400x400.png', hint: 'El Cantante de los Cantantes' },
-  { name: 'Willie Colón', src: 'https://placehold.co/400x400.png', hint: 'El Malo del Trombón' },
-  { name: 'Johnny Pacheco', src: 'https://placehold.co/400x400.png', hint: 'Fundador de Fania' },
+  { name: "Oscar D'León", src: '/Oscar De Leon.jpg', hint: 'La Guarachera de Cuba' },
+  { name: 'Pete "El Conde" Rodríguez', src: '/Pete El Conde Rodriguez.jpg', hint: 'El Cantante de los Cantantes' },
+  { name: 'Ismael Rivera', src: '/Ismael Rivera.jpg', hint: 'El Malo del Trombón' },
+  { name: 'Joe Arroyo', src: '/Joe Arroyo.jpg', hint: 'Fundador de Fania' },
 ];
 
 export function ArtistShowcase() {

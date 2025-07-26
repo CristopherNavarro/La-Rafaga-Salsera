@@ -11,11 +11,11 @@ import { Download } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const tracks = [
-  { title: 'La Vida Es Un Carnaval', artist: 'Celia Cruz' },
-  { title: 'El Cantante', artist: 'Héctor Lavoe' },
-  { title: 'Aguanile', artist: 'Willie Colón & Héctor Lavoe' },
-  { title: 'Vivir Mi Vida', artist: 'Marc Anthony' },
-  { title: 'Pedro Navaja', artist: 'Rubén Blades' },
+  { title: 'Déjala Bailar', artist: 'Fruko y Sus Tesos' },
+  { title: 'Cada Quien', artist: 'La Salsa Mayor' },
+  { title: 'Las Maracas', artist: 'Los Tumis De Cartavio' },
+  { title: 'La Canción Que Te Prometí', artist: 'Orquesta Borinquen' },
+  { title: 'Agua De Clavelito.', artist: 'Johnny Pacheco' },
 ];
 
 export function TrackList() {
