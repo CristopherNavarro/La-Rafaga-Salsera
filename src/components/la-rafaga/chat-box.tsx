@@ -9,8 +9,13 @@ export function ChatBox() {
         <CardTitle className="font-headline tracking-wide">Chat de la Comunidad</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="h-96 border-2 border-dashed border-border rounded-lg flex items-center justify-center bg-background/30">
-          <p className="text-muted-foreground text-center p-4">Widget Chat</p>
+        <div className="h-96 w-full">
+          <iframe
+            src="https://deadsimplechat.com/zT4gnaIvs"
+            width="100%"
+            height="100%"
+            style={{ border: 'none' }}
+          />
         </div>
       </CardContent>
     </Card>

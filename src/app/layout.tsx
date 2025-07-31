@@ -4,6 +4,7 @@ import { Anton, Open_Sans } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/la-rafaga/header';
 import { Toaster } from '@/components/ui/toaster';
+import Script from 'next/script';
 
 // 2. CONFIGURAMOS "ANTON"
 const anton = Anton({
@@ -47,6 +48,8 @@ export default function RootLayout({
         <footer className="py-6 px-4 md:px-8 border-t border-border text-center text-muted-foreground text-sm">
           <p>© {new Date().getFullYear()} La Ráfaga Salsera. Todos los derechos reservados.</p>
         </footer>
+
+        
       </body>
     </html>
   );
